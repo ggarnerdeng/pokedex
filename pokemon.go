@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //Pokemon is a data struct representing each poke we caught or seen
 type Pokemon struct {
 	id     int
@@ -10,7 +8,7 @@ type Pokemon struct {
 }
 
 //Create constructs a pokemon
-func (p *Pokemon) Create(id int, name string, caught bool, pokedex []Pokemon) {
+func Create(id int, name string, caught bool, pokedex []Pokemon) {
 	newPokemon := Pokemon{
 		id:     id,
 		name:   name,
@@ -19,9 +17,11 @@ func (p *Pokemon) Create(id int, name string, caught bool, pokedex []Pokemon) {
 	pokedex = append(pokedex, newPokemon)
 }
 
-//Read prints pokedex
-func (p *Pokemon) Read(pokedex []Pokemon) {
-	for _, p := range pokedex {
-		fmt.Println(p.name, p.caught)
+//NewPokemon du
+func NewPokemon(id int, name string, caught bool) Pokemon {
+	return Pokemon{
+		id:     id,
+		name:   name,
+		caught: caught,
 	}
 }
